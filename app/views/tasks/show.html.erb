@@ -1,0 +1,11 @@
+<%= link_to "edit task", edit_task_path %>
+<h2> <%= @task.title %> </h2>
+<p> <%= @task.details %> </p>
+<p> <%= form_for(@task) do |f| %>
+    <%= f.check_box :completed %>
+    <%= f.label :completed %>
+    <% end %>
+</p>
+<%= link_to "Back to list", tasks_path %>
+<br>
+<%= link_to 'Destroy', task_path(@task), data:{ turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
